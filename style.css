@@ -1,0 +1,356 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+    min-height: 100vh;
+}
+body {
+    height: 100vh;
+}
+button {
+    background: inherit;
+    border: 0;
+    cursor: pointer;
+}
+input:focus {
+    border: 0;
+    outline: 0;
+}
+/* Styles reseted */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+:root {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+.container {
+    height: 100%;
+    background-color: rgb(211, 197, 197);
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 270px 1fr;
+}
+
+/* HEADER ================================ */
+.header {
+    background-color: #eff8df;
+    grid-area: 1 / 2 / 2 / -1;
+    display: grid;
+    grid-template-rows: 3fr 4fr;
+    grid-template-columns: 2fr 1fr;
+    row-gap: 20px;
+    padding: 20px 40px;
+    align-items: center;
+    position: relative;
+    box-shadow: 2px 4px 8px 0px rgb(133, 133, 133);
+}
+/* search-from =========================== */
+.header .search-form {
+    width: 100%;
+}
+.header .search-form button {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+.header .search-form button img {
+    max-height: 28px;
+    cursor: pointer;
+}
+.header .search-form button input {
+    border-radius: 30px;
+    border: 1px solid rgb(206, 206, 206);
+    height: 25px;
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 80%;
+}
+/* user-profile =========================== */
+.header .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    justify-self: end;
+}
+.header .user-profile .bell img {
+    max-height: 30px;
+    cursor: pointer;
+}
+.header .user-profile .user-icon {
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;   
+}
+.header .user-profile .user-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.header .user-profile .user-name {
+    font-size: 26px;
+    font-weight: 600;
+}
+/* user-info ============================== */
+.header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.header .user-info .user-avatar {
+    width: 80px;
+    height: 80px;
+}
+.header .user-info .user-avatar img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+.header .user-info .user-greeting p {
+    font-weight: 600;
+}
+.header .user-info .user-greeting p:first-child {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.header .user-info .user-greeting p:last-child {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+/* buttons ================================= */
+.buttons {
+    align-self: center;
+    justify-self: end;
+    display: flex;
+    gap: 30px;
+}
+.buttons button {
+    background-color: rgb(31, 116, 173);
+    border: 1px solid rgb(12, 54, 82);
+    height: 50px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 0 3px rgb(51, 162, 236);
+}
+.buttons button:hover {
+    background-color: rgb(28, 71, 100);
+    box-shadow: 0 0 5px rgb(19, 123, 192);
+}
+.buttons button:active {
+    background-color: rgb(17, 49, 70);
+    position: relative;
+    top: 2px;
+    left: 1px;
+}
+/* SIDEBAR ================================= */
+.sidebar {
+    background-color: #fcba63;
+    grid-area: 1 / 1 / -1 / 2;
+    display: grid;
+    padding: 30px;
+    grid-template-rows: 1fr 4fr 50%;
+    row-gap: 30px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #000;
+    box-shadow: 0 5px 5px 0 #000;
+    position: relative;
+}
+.sidebar a {
+    display: inline-flex;
+    align-items: center; 
+    justify-content: start;
+    gap: 10px;
+}
+.sidebar a span {
+    text-shadow: 0 0 2px rgb(119, 119, 119);
+}
+.sidebar a:hover {
+    text-decoration: underline;
+}
+.sidebar a:active span {
+    transform: scaleX(0.98);
+}
+.sidebar .logo a img {
+    max-width: 40px;
+    max-height: 40px;
+}
+.sidebar ul {
+    display: grid;
+    row-gap: 15px;
+}
+.sidebar ul li a img {
+    max-height: 30px;
+    position: relative;
+    top: -2px;
+}
+/* MAIN-CONTENT ============================= */
+.main-content {
+    background-color: #e4e4e7;
+    grid-area: 2 / 2 / -1 / -1;
+    display: grid;
+    gap: 25px;
+    grid-template-rows: 1fr 0.9fr;
+    grid-template-columns: 7fr 3fr;
+    padding: 25px;
+}
+.projects {
+    grid-area: 1 / 1 / -1 / 2;
+}
+.projects .projects-title {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 700;
+}
+.projects .projects-container {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.projects .project {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(208, 221, 135);
+    border: 2px solid #aaa;
+}
+.projects .project .project-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.projects .project .project-text {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 120%;
+}
+.projects .project .buttons {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+.projects .project .buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(235, 212, 111);
+    width: 50px;
+    height: 50px;
+}
+.projects .project .buttons button:hover {
+    background-color: rgb(153, 116, 240);
+}
+.projects .project .buttons button img {
+    display: block;
+    height: 100%;
+}
+.announcements {
+    grid-area: 1 / 2 / 2 / -1;
+}
+.announcements .announcements-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.announcements .announcements-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    border: 2px solid #aaa;
+    border-radius: 10px;
+    background-color: rgb(208, 221, 135);
+}
+.announcements .announcement {
+    padding: 15px;
+    border-bottom: 2px solid #aaa;
+}
+.announcements .announcement:last-child {
+    border: 0;
+}
+.announcements .announcement .announcement-title {
+    margin-bottom: 10px;
+}
+.announcements .announcement .announcement-text {
+    line-height: 120%;
+}
+.trending {
+    grid-area: 2 / 2 / -1 / -1;
+    border-radius: 10px;
+}
+.trending .trending-title {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 700;
+}
+.trending .trending-container {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    row-gap: 25px;
+    padding: 15px;
+    border: 2px solid #aaa;
+    background-color: rgb(208, 221, 135);
+    border-radius: 10px;
+}
+.trending .trend {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.trending .trend img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.trending .trend .trend-name {
+    margin-bottom: 7px;
+}
+.trending .trend .trend-text {
+    color: rgb(134, 133, 133);
+}
